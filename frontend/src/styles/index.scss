@@ -1,0 +1,191 @@
+// 全局样式文件
+
+// 颜色变量
+:root {
+  --primary-color: #409eff;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --info-color: #909399;
+  
+  --text-primary: #303133;
+  --text-regular: #606266;
+  --text-secondary: #909399;
+  --text-placeholder: #c0c4cc;
+  
+  --border-light: #ebeef5;
+  --border-lighter: #f2f6fc;
+  --fill-light: #f5f7fa;
+  --fill-lighter: #fafafa;
+  
+  --bg-color: #ffffff;
+  --bg-light: #f8f9fa;
+}
+
+// 暗色主题
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e5eaf3;
+    --text-regular: #cfd3dc;
+    --text-secondary: #a3a6ad;
+    --text-placeholder: #6c6e72;
+    
+    --border-light: #414243;
+    --border-lighter: #363637;
+    --fill-light: #2d2d2d;
+    --fill-lighter: #262727;
+    
+    --bg-color: #1d1e1f;
+    --bg-light: #141414;
+  }
+}
+
+// 基础样式重置
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 
+               'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+// 通用工具类
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+.p-30 { padding: 30px; }
+
+.flex { display: flex; }
+.flex-center { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.flex-between { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+.flex-column { flex-direction: column; }
+.flex-1 { flex: 1; }
+
+// 容器
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-container {
+  min-height: calc(100vh - 60px);
+  padding: 20px 0;
+}
+
+// 卡片样式
+.card {
+  background: var(--bg-color);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+// 按钮覆盖样式
+.el-button {
+  font-weight: 500;
+  border-radius: 6px;
+  
+  &.is-round {
+    border-radius: 20px;
+  }
+}
+
+// 输入框覆盖样式
+.el-input__wrapper {
+  border-radius: 6px;
+}
+
+// 代码块样式
+.code-block {
+  background-color: var(--fill-light);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+// 标签样式
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+// 统计样式
+.stats-item {
+  text-align: center;
+  padding: 20px;
+  
+  .stats-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+  }
+  
+  .stats-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+// 响应式
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .page-container {
+    padding: 15px 0;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+}
+
+// 打印样式
+@media print {
+  .no-print {
+    display: none !important;
+  }
+} 
