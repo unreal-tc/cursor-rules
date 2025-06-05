@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # MySQL数据库
   mysql:
@@ -84,4 +82,4 @@ volumes:
 
 networks:
   default:
-    name: cursor-rules-network 
+    name: cursor-rules-network
